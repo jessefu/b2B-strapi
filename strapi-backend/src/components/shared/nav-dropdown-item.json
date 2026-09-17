@@ -73,6 +73,36 @@
           ]
         }
       }
+    },
+    "post_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::postcategory.postcategory",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "post-category"
+          ]
+        }
+      }
+    },
+    "product_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::productcategory.productcategory",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "product-category"
+          ]
+        }
+      }
     }
   },
   "config": {}

@@ -319,6 +319,14 @@ export interface SharedNavDropdownItem extends Struct.ComponentSchema {
     >;
     page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
     post: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
+    post_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postcategory.postcategory'
+    >;
+    product_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::productcategory.productcategory'
+    >;
     url: Schema.Attribute.String;
   };
 }
@@ -336,6 +344,14 @@ export interface SharedNavItem extends Struct.ComponentSchema {
     >;
     page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
     post: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
+    post_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postcategory.postcategory'
+    >;
+    product_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::productcategory.productcategory'
+    >;
     url: Schema.Attribute.String;
   };
 }
