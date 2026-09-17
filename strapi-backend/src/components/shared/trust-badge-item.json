@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_trust_badge_items",
+  "info": {
+    "displayName": "Trust Badge Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "badgeIcon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "verifyUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

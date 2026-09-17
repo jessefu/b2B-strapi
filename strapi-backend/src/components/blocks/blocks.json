@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_blocks",
+  "info": {
+    "displayName": "Blocks"
+  },
+  "options": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

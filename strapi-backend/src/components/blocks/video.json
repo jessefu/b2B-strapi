@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_videos",
+  "info": {
+    "displayName": "Video"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "video-left",
+        "video-right",
+        "stack-top",
+        "stack-bottom"
+      ]
+    }
+  },
+  "config": {}
+}

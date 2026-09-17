@@ -1,0 +1,109 @@
+{
+  "collectionName": "components_shared_nav_dropdown_items",
+  "info": {
+    "displayName": "Nav Dropdown Item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "custom"
+          ]
+        }
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "linkType": {
+      "type": "enumeration",
+      "enum": [
+        "page",
+        "product-category",
+        "post-category",
+        "post",
+        "custom"
+      ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "page"
+          ]
+        }
+      }
+    },
+    "post_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post-category.post-category",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "post-category"
+          ]
+        }
+      }
+    },
+    "product_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-category.product-category",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "product-category"
+          ]
+        }
+      }
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "linkType"
+            },
+            "post"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

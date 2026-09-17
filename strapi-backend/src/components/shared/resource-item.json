@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_shared_resource_items",
+  "info": {
+    "displayName": "Resource Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downloadFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "requiresLead": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

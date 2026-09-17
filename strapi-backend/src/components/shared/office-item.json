@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_office_items",
+  "info": {
+    "displayName": "Office Item"
+  },
+  "options": {},
+  "attributes": {
+    "cityOrRegion": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "isHeadquarter": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

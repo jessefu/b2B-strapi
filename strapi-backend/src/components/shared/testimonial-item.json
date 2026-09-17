@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_testimonial_items",
+  "info": {
+    "displayName": "Testimonial Item"
+  },
+  "options": {},
+  "attributes": {
+    "authorName": {
+      "type": "string"
+    },
+    "authorTitle": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

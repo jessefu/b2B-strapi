@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_shared_case_study_items",
+  "info": {
+    "displayName": "Case Study Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clientLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "summary": {
+      "type": "text"
+    },
+    "metrics": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

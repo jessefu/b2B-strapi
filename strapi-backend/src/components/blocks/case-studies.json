@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_case_studies",
+  "info": {
+    "displayName": "Case Studies"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "layoutStyle": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "slider",
+        "featured"
+      ]
+    },
+    "cases": {
+      "type": "component",
+      "component": "shared.case-study-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

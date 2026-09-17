@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_icon_lists",
+  "info": {
+    "displayName": "Icon List"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "component",
+      "component": "shared.icon-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

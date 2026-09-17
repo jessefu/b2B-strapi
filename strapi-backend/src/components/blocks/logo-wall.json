@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_logo_walls",
+  "info": {
+    "displayName": "Logo Wall"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "component",
+      "component": "shared.logo-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

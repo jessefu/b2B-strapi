@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_team_member_items",
+  "info": {
+    "displayName": "Team Member Item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bio": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    }
+  },
+  "config": {}
+}

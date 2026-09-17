@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_blocks_recent_posts",
+  "info": {
+    "displayName": "Recent Posts"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "postsCount": {
+      "type": "integer"
+    },
+    "displayMode": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "list"
+      ]
+    },
+    "sourceType": {
+      "type": "enumeration",
+      "enum": [
+        "latest",
+        "manual",
+        "category"
+      ]
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sourceType"
+            },
+            "manual"
+          ]
+        }
+      }
+    },
+    "post_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post-category.post-category",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sourceType"
+            },
+            "category"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

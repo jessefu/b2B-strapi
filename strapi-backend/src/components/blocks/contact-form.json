@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_contact_forms",
+  "info": {
+    "displayName": "Contact Form"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "successMessage": {
+      "type": "string"
+    },
+    "submitButtonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

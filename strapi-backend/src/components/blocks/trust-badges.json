@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_trust_badges",
+  "info": {
+    "displayName": "Trust Badges"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "slider"
+      ]
+    },
+    "badges": {
+      "type": "component",
+      "component": "shared.trust-badge-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

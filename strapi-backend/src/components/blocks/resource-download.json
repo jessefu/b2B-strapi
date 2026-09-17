@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_resource_downloads",
+  "info": {
+    "displayName": "Resource Download"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "resources": {
+      "type": "component",
+      "component": "shared.resource-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

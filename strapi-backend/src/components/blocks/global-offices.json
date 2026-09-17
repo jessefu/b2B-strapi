@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_global_offices",
+  "info": {
+    "displayName": "Global Offices"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "offices": {
+      "type": "component",
+      "component": "shared.office-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

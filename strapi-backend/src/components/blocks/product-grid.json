@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_product_grids",
+  "info": {
+    "displayName": "Product Grid"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "layoutStyle": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "carousel"
+      ]
+    },
+    "maxItems": {
+      "type": "integer",
+      "default": 8
+    }
+  },
+  "config": {}
+}

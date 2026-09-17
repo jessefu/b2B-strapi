@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_seo_meta_seo_metas",
+  "info": {
+    "displayName": "SeoMeta"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

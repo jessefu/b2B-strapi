@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_teams",
+  "info": {
+    "displayName": "Team"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "layoutStyle": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "carousel"
+      ]
+    },
+    "members": {
+      "type": "component",
+      "component": "shared.team-member-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

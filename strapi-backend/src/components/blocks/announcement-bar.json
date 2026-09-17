@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_announcement_bars",
+  "info": {
+    "displayName": "Announcement Bar"
+  },
+  "options": {},
+  "attributes": {
+    "message": {
+      "type": "string"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaUrl": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "primary",
+        "accent"
+      ]
+    }
+  },
+  "config": {}
+}
