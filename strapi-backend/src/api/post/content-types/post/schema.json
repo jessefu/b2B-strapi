@@ -58,12 +58,6 @@
         }
       }
     },
-    "post_category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::post-category.post-category",
-      "inversedBy": "posts"
-    },
     "SeoMeta": {
       "type": "component",
       "pluginOptions": {
@@ -73,6 +67,12 @@
       },
       "component": "seo-meta.seo-meta",
       "repeatable": false
+    },
+    "post_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::postcategory.postcategory",
+      "inversedBy": "posts"
     }
   }
 }

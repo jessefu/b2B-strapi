@@ -145,10 +145,6 @@ export interface BlocksRecentPosts extends Struct.ComponentSchema {
   };
   attributes: {
     displayMode: Schema.Attribute.Enumeration<['grid', 'list']>;
-    post_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::post-category.post-category'
-    >;
     posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     postsCount: Schema.Attribute.Integer;
     sectionTitle: Schema.Attribute.String;
@@ -323,14 +319,6 @@ export interface SharedNavDropdownItem extends Struct.ComponentSchema {
     >;
     page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
     post: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
-    post_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::post-category.post-category'
-    >;
-    product_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::product-category.product-category'
-    >;
     url: Schema.Attribute.String;
   };
 }
@@ -348,14 +336,6 @@ export interface SharedNavItem extends Struct.ComponentSchema {
     >;
     page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
     post: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
-    post_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::post-category.post-category'
-    >;
-    product_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::product-category.product-category'
-    >;
     url: Schema.Attribute.String;
   };
 }

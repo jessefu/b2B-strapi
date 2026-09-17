@@ -43,21 +43,6 @@
           ]
         }
       }
-    },
-    "post_category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::post-category.post-category",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "sourceType"
-            },
-            "category"
-          ]
-        }
-      }
     }
   },
   "config": {}

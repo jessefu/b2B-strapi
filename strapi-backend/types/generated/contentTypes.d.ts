@@ -620,52 +620,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPostCategoryPostCategory
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'post_categories';
-  info: {
-    displayName: 'Post Category)';
-    pluralName: 'post-categories';
-    singularName: 'post-category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::post-category.post-category'
-    >;
-    name: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
@@ -709,7 +663,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     post_category: Schema.Attribute.Relation<
       'manyToOne',
-      'api::post-category.post-category'
+      'api::postcategory.postcategory'
     >;
     publishedAt: Schema.Attribute.DateTime;
     SeoMeta: Schema.Attribute.Component<'seo-meta.seo-meta', false> &
@@ -731,13 +685,13 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiProductCategoryProductCategory
+export interface ApiPostcategoryPostcategory
   extends Struct.CollectionTypeSchema {
-  collectionName: 'product_categories';
+  collectionName: 'postcategories';
   info: {
-    displayName: 'Product Category';
-    pluralName: 'product-categories';
-    singularName: 'product-category';
+    displayName: 'PostCategory';
+    pluralName: 'postcategories';
+    singularName: 'postcategory';
   };
   options: {
     draftAndPublish: true;
@@ -760,7 +714,7 @@ export interface ApiProductCategoryProductCategory
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::product-category.product-category'
+      'api::postcategory.postcategory'
     >;
     name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -768,9 +722,14 @@ export interface ApiProductCategoryProductCategory
           localized: true;
         };
       }>;
-    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'name'>;
+    slug: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -840,9 +799,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    product_categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::product-category.product-category'
+    product_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::productcategory.productcategory'
     >;
     publishedAt: Schema.Attribute.DateTime;
     SeoMeta: Schema.Attribute.Component<'seo-meta.seo-meta', false> &
@@ -859,6 +818,57 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
         };
       }>;
     title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductcategoryProductcategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'productcategories';
+  info: {
+    displayName: 'Product Category';
+    pluralName: 'productcategories';
+    singularName: 'productcategory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::productcategory.productcategory'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1385,10 +1395,10 @@ declare module '@strapi/strapi' {
       'api::global-setting.global-setting': ApiGlobalSettingGlobalSetting;
       'api::header.header': ApiHeaderHeader;
       'api::page.page': ApiPagePage;
-      'api::post-category.post-category': ApiPostCategoryPostCategory;
       'api::post.post': ApiPostPost;
-      'api::product-category.product-category': ApiProductCategoryProductCategory;
+      'api::postcategory.postcategory': ApiPostcategoryPostcategory;
       'api::product.product': ApiProductProduct;
+      'api::productcategory.productcategory': ApiProductcategoryProductcategory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

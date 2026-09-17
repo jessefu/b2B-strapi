@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "product_categories",
+  "collectionName": "productcategories",
   "info": {
-    "singularName": "product-category",
-    "pluralName": "product-categories",
+    "singularName": "productcategory",
+    "pluralName": "productcategories",
     "displayName": "Product Category"
   },
   "options": {
@@ -23,6 +23,15 @@
         }
       }
     },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "name"
+    },
     "description": {
       "type": "text",
       "pluginOptions": {
@@ -31,15 +40,11 @@
         }
       }
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
-    },
     "products": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::product.product",
-      "mappedBy": "product_categories"
+      "mappedBy": "product_category"
     }
   }
 }
