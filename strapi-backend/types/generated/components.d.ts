@@ -81,11 +81,7 @@ export interface BlocksHero extends Struct.ComponentSchema {
     displayName: 'Hero';
   };
   attributes: {
-    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ctaButtonText: Schema.Attribute.String;
-    ctaButtonUrl: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    subHeading: Schema.Attribute.Text;
+    slide: Schema.Attribute.Component<'blocks.slide', true>;
   };
 }
 
@@ -173,6 +169,22 @@ export interface BlocksRichText extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksSlide extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_slides';
+  info: {
+    displayName: 'slide';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ctaButtonText: Schema.Attribute.String;
+    ctaButtonUrl: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
   };
 }
 
@@ -467,6 +479,7 @@ declare module '@strapi/strapi' {
       'blocks.recent-posts': BlocksRecentPosts;
       'blocks.resource-download': BlocksResourceDownload;
       'blocks.rich-text': BlocksRichText;
+      'blocks.slide': BlocksSlide;
       'blocks.team': BlocksTeam;
       'blocks.testimonials': BlocksTestimonials;
       'blocks.trust-badges': BlocksTrustBadges;
