@@ -32,25 +32,18 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
       },
     },
   },
-  upload: { 
+  upload: {
     config: {
-      provider: 'aws-s3',
+      provider: 'aws-s3', // 如果还报错，可以尝试改成 '@strapi/provider-upload-aws-s3'
       providerOptions: {
         accessKeyId: env('AWS_ACCESS_KEY_ID'),
         secretAccessKey: env('AWS_SECRET_ACCESS_KEY'),
         region: env('AWS_REGION'),
-        // R2 必须配置 endpoint
         endpoint: env('AWS_ENDPOINT'),
         params: {
           Bucket: env('AWS_BUCKET_NAME'),
         },
-        // 确保配置了公共访问 URL，这样后台返回的图片地址才会是外链
         baseUrl: env('AWS_BUCKET_URL'),
-      },
-      actionOptions: {
-        upload: {},
-        uploadStream: {},
-        delete: {},
       },
     },
   },
