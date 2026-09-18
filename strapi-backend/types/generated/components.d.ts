@@ -127,9 +127,15 @@ export interface BlocksProductGrid extends Struct.ComponentSchema {
     displayName: 'Product Grid';
   };
   attributes: {
+    chooseMode: Schema.Attribute.Enumeration<['manual', 'category']>;
     description: Schema.Attribute.Text;
     layoutStyle: Schema.Attribute.Enumeration<['grid', 'carousel']>;
     maxItems: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<8>;
+    product_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::productcategory.productcategory'
+    >;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     sectionTitle: Schema.Attribute.String;
   };
 }

@@ -21,6 +21,43 @@
     "maxItems": {
       "type": "integer",
       "default": 8
+    },
+    "chooseMode": {
+      "type": "enumeration",
+      "enum": [
+        "manual",
+        "category"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "chooseMode"
+            },
+            "manual"
+          ]
+        }
+      }
+    },
+    "product_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::productcategory.productcategory",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "chooseMode"
+            },
+            "category"
+          ]
+        }
+      }
     }
   },
   "config": {}
