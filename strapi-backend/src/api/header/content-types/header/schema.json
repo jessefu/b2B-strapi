@@ -63,6 +63,16 @@
           "localized": true
         }
       }
+    },
+    "AnnouncemenBar": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.announcement-bar",
+      "repeatable": false
     }
   }
 }
