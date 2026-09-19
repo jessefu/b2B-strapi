@@ -148,6 +148,10 @@ export interface BlocksRecentPosts extends Struct.ComponentSchema {
   };
   attributes: {
     displayMode: Schema.Attribute.Enumeration<['grid', 'list']>;
+    post_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::postcategory.postcategory'
+    >;
     posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     postsCount: Schema.Attribute.Integer;
     sectionTitle: Schema.Attribute.String;
