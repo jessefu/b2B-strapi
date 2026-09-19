@@ -61,7 +61,8 @@
         "blocks.trust-badges",
         "blocks.global-offices",
         "blocks.case-studies",
-        "blocks.resource-download"
+        "blocks.resource-download",
+        "blocks.rich-content"
       ]
     }
   }

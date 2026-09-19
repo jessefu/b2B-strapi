@@ -91,7 +91,8 @@ export interface BlocksIconList extends Struct.ComponentSchema {
     displayName: 'Icon List';
   };
   attributes: {
-    sectionTitle: Schema.Attribute.Component<'shared.icon-item', true>;
+    icons: Schema.Attribute.Component<'shared.icon-item', true>;
+    SectionTitle: Schema.Attribute.String;
   };
 }
 
@@ -164,6 +165,17 @@ export interface BlocksResourceDownload extends Struct.ComponentSchema {
     resources: Schema.Attribute.Component<'shared.resource-item', true>;
     sectionTitle: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksRichContent extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_rich_contents';
+  info: {
+    displayName: 'Rich Content';
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -484,6 +496,7 @@ declare module '@strapi/strapi' {
       'blocks.product-grid': BlocksProductGrid;
       'blocks.recent-posts': BlocksRecentPosts;
       'blocks.resource-download': BlocksResourceDownload;
+      'blocks.rich-content': BlocksRichContent;
       'blocks.rich-text': BlocksRichText;
       'blocks.slide': BlocksSlide;
       'blocks.team': BlocksTeam;

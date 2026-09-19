@@ -5,7 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "sectionTitle": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "icons": {
       "type": "component",
       "component": "shared.icon-item",
       "repeatable": true
