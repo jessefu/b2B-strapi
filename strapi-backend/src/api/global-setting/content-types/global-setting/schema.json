@@ -46,25 +46,26 @@
     "address": {
       "type": "text"
     },
-    "socialLinks": {
+    "SocialLink": {
       "type": "component",
-      "component": "social-links.social-links",
+      "component": "shared.social-link",
       "repeatable": true
     },
-    "platform": {
-      "type": "enumeration",
-      "enum": [
-        "LinkedIn",
-        "YouTube",
-        "Twitter",
-        "Facebook",
-        "Instagram",
-        "TikTok",
-        "WhatsApp"
-      ]
-    },
-    "url": {
+    "googleAdsenseId": {
       "type": "string"
+    },
+    "googleAnalyticsId": {
+      "type": "string"
+    },
+    "defaultOgImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

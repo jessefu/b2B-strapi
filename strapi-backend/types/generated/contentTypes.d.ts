@@ -443,6 +443,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
+  collectionName: 'authors';
+  info: {
+    displayName: 'Author';
+    pluralName: 'authors';
+    singularName: 'author';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    bio: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::author.author'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -511,7 +544,12 @@ export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    defaultOgImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    googleAdsenseId: Schema.Attribute.String;
+    googleAnalyticsId: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -520,25 +558,13 @@ export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     phoneNumber: Schema.Attribute.String;
-    platform: Schema.Attribute.Enumeration<
-      [
-        'LinkedIn',
-        'YouTube',
-        'Twitter',
-        'Facebook',
-        'Instagram',
-        'TikTok',
-        'WhatsApp',
-      ]
-    >;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text;
     siteName: Schema.Attribute.String;
-    socialLinks: Schema.Attribute.Component<'social-links.social-links', true>;
+    SocialLink: Schema.Attribute.Component<'shared.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 
@@ -693,6 +719,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     content: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1448,6 +1475,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::author.author': ApiAuthorAuthor;
       'api::footer.footer': ApiFooterFooter;
       'api::global-setting.global-setting': ApiGlobalSettingGlobalSetting;
       'api::header.header': ApiHeaderHeader;

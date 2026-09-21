@@ -424,6 +424,33 @@ export interface SharedResourceItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_links';
+  info: {
+    displayName: 'social link';
+  };
+  attributes: {
+    platform: Schema.Attribute.Enumeration<
+      [
+        'tiktok',
+        'twitter',
+        'facebook',
+        'youtube',
+        'instagram',
+        'pinterest',
+        'reddit',
+        'discord',
+        'quora',
+        'github',
+        'telegram',
+        'whatsapp',
+        'linkedin',
+      ]
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSpecItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_spec_items';
   info: {
@@ -517,6 +544,7 @@ declare module '@strapi/strapi' {
       'shared.nav-item': SharedNavItem;
       'shared.office-item': SharedOfficeItem;
       'shared.resource-item': SharedResourceItem;
+      'shared.social-link': SharedSocialLink;
       'shared.spec-item': SharedSpecItem;
       'shared.team-member-item': SharedTeamMemberItem;
       'shared.testimonial-item': SharedTestimonialItem;
