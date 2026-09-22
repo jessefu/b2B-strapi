@@ -63,6 +63,30 @@ export interface BlocksFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFeaturedPostHero extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_post_heroes';
+  info: {
+    displayName: 'Featured Post Hero';
+  };
+  attributes: {
+    heropost: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    SectionTitle: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksFeaturedPostSplit extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_post_splits';
+  info: {
+    displayName: 'Featured Post Split';
+  };
+  attributes: {
+    heropost: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    SectionTitle: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksGlobalOffices extends Struct.ComponentSchema {
   collectionName: 'components_blocks_global_offices';
   info: {
@@ -519,6 +543,8 @@ declare module '@strapi/strapi' {
       'blocks.case-studies': BlocksCaseStudies;
       'blocks.contact-form': BlocksContactForm;
       'blocks.faq': BlocksFaq;
+      'blocks.featured-post-hero': BlocksFeaturedPostHero;
+      'blocks.featured-post-split': BlocksFeaturedPostSplit;
       'blocks.global-offices': BlocksGlobalOffices;
       'blocks.hero': BlocksHero;
       'blocks.icon-list': BlocksIconList;

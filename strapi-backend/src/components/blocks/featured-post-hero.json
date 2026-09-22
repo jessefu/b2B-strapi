@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_featured_post_heroes",
+  "info": {
+    "displayName": "Featured Post Hero"
+  },
+  "options": {},
+  "attributes": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "heropost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    }
+  },
+  "config": {}
+}

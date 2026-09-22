@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_featured_post_splits",
+  "info": {
+    "displayName": "Featured Post Split"
+  },
+  "options": {},
+  "attributes": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "heropost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    }
+  },
+  "config": {}
+}
