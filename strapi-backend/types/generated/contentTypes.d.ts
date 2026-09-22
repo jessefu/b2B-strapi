@@ -671,6 +671,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.case-studies',
         'blocks.resource-download',
         'blocks.rich-content',
+        'blocks.featured-post-split',
+        'blocks.featured-post-hero',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

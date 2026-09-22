@@ -62,7 +62,9 @@
         "blocks.global-offices",
         "blocks.case-studies",
         "blocks.resource-download",
-        "blocks.rich-content"
+        "blocks.rich-content",
+        "blocks.featured-post-split",
+        "blocks.featured-post-hero"
       ]
     }
   }
